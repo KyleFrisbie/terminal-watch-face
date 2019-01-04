@@ -30,7 +30,16 @@ const floorCountValue = document.getElementById('floorCountValue');
 const caloriesBurnedLabel = document.getElementById('caloriesBurnedLabel');
 const caloriesBurnedValue = document.getElementById('caloriesBurnedValue');
 
-const distanceUnit = (units.distance === 'metric') ? 'm' : 'mi';
+let distanceFactor;
+let distanceUnit;
+if (units.distance === 'metric') {
+  distanceFactor = 1000;
+  distanceUnit = 'km';
+} else {
+  distanceFactor = 1609.34;
+  distanceUnit = 'mi';
+}
+
 const distanceLabel = document.getElementById('distanceLabel');
 const distanceValue = document.getElementById('distanceValue');
 
@@ -75,7 +84,7 @@ const activityProgress = () => {
   caloriesBurnedValue.text = `${today.adjusted.calories.toLocaleString() || 0}`;
 
   distanceLabel.text = `$ dist:`;
-  distanceValue.text = `${today.adjusted.distance.toLocaleString() || 0} ${distanceUnit}`;
+  distanceValue.text = `${(today.adjusted.distance / distanceFactor).toFixed(2) || 0} ${distanceUnit}`;
 }
 
 heartRateLabel.text = `$ hr:`;

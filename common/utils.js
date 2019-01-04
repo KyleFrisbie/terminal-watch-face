@@ -6,5 +6,4 @@ export function zeroPad(i) {
   return i;
 }
 
-
 export const defaultText = '--';
