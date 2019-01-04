@@ -1,0 +1,26 @@
+{
+  "fitbit": {
+    "appUUID": "00428bd9-c3b2-492d-b2ba-ce947100877b",
+    "appType": "clockface",
+    "appDisplayName": "terminal-watch-face",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate",
+      "run_background"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "terminal-watch-face"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.0.0"
+  }
+}

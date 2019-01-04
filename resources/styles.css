@@ -1,0 +1,122 @@
+.background {
+  viewport-fill: #141414;
+}
+
+#timeLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 10%;
+  fill: #45D40C;
+}
+#timeValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 10%;
+  fill: #45D40C;
+}
+
+#dateLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 24%;
+  fill: #45D40C;
+}
+#dateValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 24%;
+  fill: #45D40C;
+}
+
+#stepCountLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 38%;
+  fill: #45D40C;
+}
+#stepCountValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 38%;
+  fill: #45D40C;
+}
+
+#floorCountLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 52%;
+  fill: #45D40C;
+}
+#floorCountValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 52%;
+  fill: #45D40C;
+}
+
+#caloriesBurnedLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 66%;
+  fill: #45D40C;
+}
+#caloriesBurnedValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 66%;
+  fill: #45D40C;
+}
+
+#distanceLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 80%;
+  fill: #45D40C;
+}
+#distanceValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 80%;
+  fill: #45D40C;
+}
+
+#heartRateLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 2%;
+  y: 94%;
+  fill: #45D40C;
+}
+#heartRateValue {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x: 50%;
+  y: 94%;
+  fill: #45D40C;
+}

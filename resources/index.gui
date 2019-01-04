@@ -1,0 +1,22 @@
+<svg class="background">
+  <text id="timeLabel" />
+  <text id="timeValue" />
+  
+  <text id="dateLabel" />
+  <text id="dateValue" />
+  
+  <text id="stepCountLabel" />
+  <text id="stepCountValue" />
+  
+  <text id="floorCountLabel" />
+  <text id="floorCountValue" />
+  
+  <text id="caloriesBurnedLabel" />
+  <text id="caloriesBurnedValue" />
+  
+  <text id="distanceLabel" />
+  <text id="distanceValue" />
+  
+  <text id="heartRateLabel" />
+  <text id="heartRateValue" />
+</svg>
