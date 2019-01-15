@@ -50,13 +50,8 @@ const colorSet = [
 ];
 
 const options = [
-  ['Background Color', 'colorBackground'],
-  ['Dividers Color', 'colorDividers'],
-  ['Time Color', 'colorTime'],
-  ['Date Color', 'colorDate'],
-  ['Activity Color', 'colorActivity'],
-  ['HRM Text Color', 'colorHRM'],
-  ['HRM Heart Color', 'colorImgHRM']
+  ['Background Color', 'backgroundColor'],
+  ['Text Color', 'textColor']
 ];
 
 function mySettings(props) {

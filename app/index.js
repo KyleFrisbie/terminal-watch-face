@@ -8,12 +8,16 @@ import { HeartRateSensor } from "heart-rate";
 import { defaultText } from "../common/utils";
 import { today } from "user-activity";
 import { units } from "user-settings";
+import { peerSocket } from "messaging";
 
 // Day names
-const days = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 // Month names
-const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const background = document.getElementById('background');
+const textElements = document.getElementsByClassName('text');
 
 const timeLabel = document.getElementById('timeLabel');
 const timeValue = document.getElementById('timeValue');
@@ -107,4 +111,17 @@ if (me.permissions.granted("access_heart_rate")) {
     heartRateValue.text = `${hrm.heartRate} bpm`;
   }
   hrm.start();
+}
+
+peerSocket.onmessage = (event) => {
+  const data = event.data;
+  if (data) {
+    if (data.key === 'backgroundColor') {
+      background.style.fill = data.value;
+    } else if (data.key === 'textColor') {
+      textElements.forEach((element) => {
+        element.style.fill = data.value;
+      });
+    }
+  }
 }
