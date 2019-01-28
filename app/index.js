@@ -1,14 +1,14 @@
-import clock from "clock";
-import document from "document";
-import { preferences } from "user-settings";
-import { defaultText, zeroPad } from "../common/utils";
-import { me } from "appbit";
-import { BodyPresenceSensor } from "body-presence";
-import { HeartRateSensor } from "heart-rate";
-import { defaultText } from "../common/utils";
-import { today } from "user-activity";
-import { units } from "user-settings";
-import { peerSocket } from "messaging";
+import clock from 'clock';
+import document from 'document';
+import { preferences } from 'user-settings';
+import { defaultText, zeroPad } from '../common/utils';
+import { me } from 'appbit';
+import { BodyPresenceSensor } from 'body-presence';
+import { HeartRateSensor } from 'heart-rate';
+import { defaultText } from '../common/utils';
+import { initialize } from './settings';
+import { today } from 'user-activity';
+import { units } from 'user-settings';
 
 // Day names
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -101,6 +101,7 @@ if (me.permissions.granted("access_heart_rate")) {
   body.onreading = () => {
     if (!body.present) {
       hrm.stop();
+      heartRateValue.text = `${defaultText} bpm`;
     } else {
       hrm.start();
     }
@@ -113,15 +114,16 @@ if (me.permissions.granted("access_heart_rate")) {
   hrm.start();
 }
 
-peerSocket.onmessage = (event) => {
-  const data = event.data;
+function settingsCallback(data) {
   if (data) {
-    if (data.key === 'backgroundColor') {
-      background.style.fill = data.value;
-    } else if (data.key === 'textColor') {
+    if (data.backgroundColor) {
+      background.style.fill = data.backgroundColor;
+    } else if (data.textColor) {
       textElements.forEach((element) => {
-        element.style.fill = data.value;
+        element.style.fill = data.textColor;
       });
     }
   }
 }
+
+initialize(settingsCallback);
