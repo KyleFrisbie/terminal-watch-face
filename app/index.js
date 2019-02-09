@@ -6,7 +6,7 @@ import { me } from 'appbit';
 import { BodyPresenceSensor } from 'body-presence';
 import { HeartRateSensor } from 'heart-rate';
 import { defaultText } from '../common/utils';
-import { initialize } from './settings';
+import { initialize } from './app-settings';
 import { today } from 'user-activity';
 import { units } from 'user-settings';
 
@@ -118,7 +118,8 @@ function settingsCallback(data) {
   if (data) {
     if (data.backgroundColor) {
       background.style.fill = data.backgroundColor;
-    } else if (data.textColor) {
+    }
+    if (data.textColor) {
       textElements.forEach((element) => {
         element.style.fill = data.textColor;
       });

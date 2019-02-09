@@ -1,4 +1,3 @@
-
-import * as settings from "./settings";
+import * as settings from './companion-settings';
 
 settings.initialize();

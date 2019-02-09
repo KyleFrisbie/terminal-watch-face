@@ -22,6 +22,6 @@ function sendSettingData(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   } else {
-    console.log("No peerSocket connection");
+    console.error("No peerSocket connection");
   }
 }
